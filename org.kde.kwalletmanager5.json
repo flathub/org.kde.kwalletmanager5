@@ -23,8 +23,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.04.3/src/kwalletmanager-23.04.3.tar.xz",
-                    "sha256": "7e35ec613f565bc060f9db4de6641499d9acc1bd4e9459bd90d19f3dc5e07ebc",
+                    "url": "https://download.kde.org/stable/release-service/23.08.0/src/kwalletmanager-23.08.0.tar.xz",
+                    "sha256": "d8e1f2137b541d4aa88e57d30ee77223f47c0e9fa63a308941287bb81012c341",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
