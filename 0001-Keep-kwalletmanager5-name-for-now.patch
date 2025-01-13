@@ -1,4 +1,4 @@
-From 6c341b4f395f812f09fa858d9cd2c03350156a84 Mon Sep 17 00:00:00 2001
+From 4a97215ea2cd7ca05912cc55b578d8515cec99d4 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Timoth=C3=A9e=20Ravier?= <tim@siosm.fr>
 Date: Mon, 2 Sep 2024 16:17:16 +0200
 Subject: [PATCH] Keep kwalletmanager5 name for now
@@ -9,19 +9,19 @@ See:
 - https://invent.kde.org/utilities/kwalletmanager/-/merge_requests/45
 - https://invent.kde.org/utilities/kwalletmanager/-/merge_requests/50
 ---
- CMakeLists.txt                                                  | 2 +-
- doc/CMakeLists.txt                                              | 2 +-
- org.kde.kwalletmanager5.appdata.xml                             | 2 +-
- ...de.kwalletmanager.desktop => org.kde.kwalletmanager5.desktop | 0
- src/manager/main.cpp                                            | 2 +-
- 5 files changed, 4 insertions(+), 4 deletions(-)
+ CMakeLists.txt                                                | 4 ++--
+ doc/CMakeLists.txt                                            | 2 +-
+ org.kde.kwalletmanager5.appdata.xml                           | 2 +-
+ ....kwalletmanager.desktop => org.kde.kwalletmanager5.desktop | 0
+ src/manager/main.cpp                                          | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
  rename org.kde.kwalletmanager.desktop => org.kde.kwalletmanager5.desktop (100%)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 13beb4d8..6a09cba4 100644
+index e4e00500..58475e1f 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -68,7 +68,7 @@ add_subdirectory( src )
+@@ -76,10 +76,10 @@ add_subdirectory( src )
  
  
  ########### install files ###############
@@ -29,7 +29,11 @@ index 13beb4d8..6a09cba4 100644
 +install( PROGRAMS org.kde.kwalletmanager5.desktop kwalletmanager5-kwalletd.desktop  DESTINATION ${KDE_INSTALL_APPDIR})
  install(FILES org.kde.kwalletmanager5.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
  ecm_generate_dbus_service_file(
-     NAME org.kde.kwalletmanager5
+-    NAME org.kde.kwalletmanager
++    NAME org.kde.kwalletmanager5
+     EXECUTABLE ${KDE_INSTALL_FULL_BINDIR}/kwalletmanager5
+     DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR}
+ )
 diff --git a/doc/CMakeLists.txt b/doc/CMakeLists.txt
 index f695ff8d..15b60ece 100644
 --- a/doc/CMakeLists.txt
@@ -41,35 +45,35 @@ index f695ff8d..15b60ece 100644
 -kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kwalletmanager)
 +kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kwalletmanager5)
 diff --git a/org.kde.kwalletmanager5.appdata.xml b/org.kde.kwalletmanager5.appdata.xml
-index 67a96d7d..4024aac7 100644
+index 7e59f185..de7f073d 100644
 --- a/org.kde.kwalletmanager5.appdata.xml
 +++ b/org.kde.kwalletmanager5.appdata.xml
-@@ -161,7 +161,7 @@
+@@ -164,7 +164,7 @@
    <provides>
      <binary>kwalletmanager5</binary>
    </provides>
 -  <launchable type="desktop-id">org.kde.kwalletmanager.desktop</launchable>
 +  <launchable type="desktop-id">org.kde.kwalletmanager5.desktop</launchable>
    <releases>
-     <release version="24.08.0" date="2024-08-22"/>
-     <release version="24.05.2" date="2024-07-04"/>
+     <release version="24.12.1" date="2025-01-09"/>
+     <release version="24.12.0" date="2024-12-12"/>
 diff --git a/org.kde.kwalletmanager.desktop b/org.kde.kwalletmanager5.desktop
 similarity index 100%
 rename from org.kde.kwalletmanager.desktop
 rename to org.kde.kwalletmanager5.desktop
 diff --git a/src/manager/main.cpp b/src/manager/main.cpp
-index d1dff4f4..c7f47c93 100644
+index 3cd117da..475770e9 100644
 --- a/src/manager/main.cpp
 +++ b/src/manager/main.cpp
-@@ -23,7 +23,7 @@ int main(int argc, char **argv)
+@@ -22,7 +22,7 @@ int main(int argc, char **argv)
  
      a.setWindowIcon(QIcon::fromTheme(QStringLiteral("kwalletmanager")));
  
 -    KAboutData aboutData(QStringLiteral("kwalletmanager"),
 +    KAboutData aboutData(QStringLiteral("kwalletmanager5"),
-                  i18n("Wallet Manager"),
-                  QStringLiteral(KWALLETMANAGER_VERSION_STRING),
-                  i18n("KDE Wallet Management Tool"),
+                          i18n("Wallet Manager"),
+                          QStringLiteral(KWALLETMANAGER_VERSION_STRING),
+                          i18n("KDE Wallet Management Tool"),
 -- 
-2.46.0
+2.47.1
 
