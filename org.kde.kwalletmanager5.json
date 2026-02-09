@@ -1,7 +1,7 @@
 {
     "id": "org.kde.kwalletmanager5",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "default-branch": "stable",
     "command": "kwalletmanager5",
@@ -14,6 +14,7 @@
         "--talk-name=org.kde.kwalletd6"
     ],
     "rename-icon": "kwalletmanager",
+    "rename-desktop-file": "org.kde.kwalletmanager.desktop",
     "modules": [
         {
             "name": "kwalletmanager5",
@@ -35,7 +36,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "0001-Keep-kwalletmanager5-name-for-now.patch"
+                    "paths": [
+                        "fix-about-dialog.patch",
+                        "fix-doc-file-install-destination.patch"
+                    ]
                 }
             ]
         }

@@ -1,0 +1,25 @@
+From e8de3e00ed0be089763fcb96859a4a8085a42e2a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sabri=20=C3=9Cnal?= <yakushabb@gmail.com>
+Date: Mon, 9 Feb 2026 15:09:49 +0300
+Subject: [PATCH] Fix about dialog
+
+---
+ src/manager/main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/manager/main.cpp b/src/manager/main.cpp
+index a9ca63f..a2d9369 100644
+--- a/src/manager/main.cpp
++++ b/src/manager/main.cpp
+@@ -22,7 +22,7 @@ int main(int argc, char **argv)
+ 
+     a.setWindowIcon(QIcon::fromTheme(QStringLiteral("kwalletmanager")));
+ 
+-    KAboutData aboutData(QStringLiteral("kwalletmanager"),
++    KAboutData aboutData(QStringLiteral("kwalletmanager5"),
+                          i18n("Wallet Manager"),
+                          QStringLiteral(KWALLETMANAGER_VERSION_STRING),
+                          i18n("KDE Wallet Management Tool"),
+-- 
+2.53.0
+
